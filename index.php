@@ -8,6 +8,8 @@
   $banner_img1 = $row["banner_img1"];
   $banner_img2 = $row["banner_img2"];
   $banner_img3 = $row["banner_img3"];
+
+  echo $banner_img3 = null;
 ?>
 <!doctype html>
 <html lang="en">
@@ -79,6 +81,7 @@
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -86,6 +89,10 @@
         </div>
         <div class="carousel-item">
           <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $banner_img2 ).'"/>'; ?>
+        </div>
+        <?php if(($banner_img3 == null) != 1) { ?>
+        <div class="carousel-item">
+          <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $banner_img3 ).'"/>'; } ?>
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
